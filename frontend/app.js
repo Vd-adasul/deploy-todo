@@ -1,5 +1,5 @@
 // Change this to your backend URL when deploying
-const API_URL = "http://localhost:3000";
+const API_URL = "https://deploy-todo-f6hf.onrender.com";
 
 let currentTab = "signin";
 
