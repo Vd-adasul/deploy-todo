@@ -14,7 +14,6 @@ app.use(cors({
     methods: ["GET", "POST", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "token"]
 }));
-app.options("*", cors());
 app.use(express.json());
 
 // POST /signup
