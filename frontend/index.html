@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- AUTH SECTION -->
+    <div id="auth-section">
+        <div class="card">
+            <h1>Todo Connect</h1>
+
+            <div class="tab-bar">
+                <button class="tab active" id="tab-signin" onclick="switchTab('signin')">Sign In</button>
+                <button class="tab" id="tab-signup" onclick="switchTab('signup')">Sign Up</button>
+            </div>
+
+            <div id="auth-error" class="error hidden"></div>
+            <div id="auth-success" class="success hidden"></div>
+
+            <form id="auth-form" onsubmit="handleAuth(event)">
+                <input type="text" id="username" placeholder="Username" required autocomplete="username" />
+                <input type="password" id="password" placeholder="Password" required autocomplete="current-password" />
+                <button type="submit" id="auth-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TODOS SECTION -->
+    <div id="todos-section" class="hidden">
+        <div class="app-header">
+            <h1>Todo Connect</h1>
+            <div class="header-right">
+                <span id="welcome-text"></span>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card add-card">
+                <h2>Add Todo</h2>
+                <div id="todo-error" class="error hidden"></div>
+                <form onsubmit="addTodo(event)">
+                    <input type="text" id="todo-title" placeholder="Title" required />
+                    <input type="text" id="todo-desc" placeholder="Description (optional)" />
+                    <button type="submit">Add Todo</button>
+                </form>
+            </div>
+
+            <div class="todos-list">
+                <h2>Your Todos</h2>
+                <div id="todos-container">
+                    <p class="empty-msg">No todos yet. Add one above!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
